@@ -46,12 +46,15 @@ const addMarker = (id) => {
   // .getElementById(id)
   // document
   // .innerHTML 
-  const row = parseInt (id.charAt(0))
-  const column = parseInt (id.charAt(2))
-  board[row][column] = currentMarker
-  changeMarker()
-  // checkForWin()
-}
+const row = parseInt (id.charAt(0))
+const column = parseInt (id.charAt(2))
+board[row][column] = currentMarker
+
+  // changeMarker()
+  checkForWin()                
+  
+} 
+
 
 // This "changeMarker" function changes "X" to "O" in the "currentMarker" variable or "O" to "X"
 const changeMarker = () => {
@@ -59,6 +62,7 @@ const changeMarker = () => {
     currentMarker = "O"
   } else {
     currentMarker = "X"
+
   }
 }
 
@@ -87,6 +91,9 @@ document.getElementById(squares[i].id)
   }  
 }
 
+
+
+
 const horizontalWin = () => {
 if((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") 
 || (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")
@@ -95,8 +102,8 @@ if((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")
 || (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O")
 || (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O")
 ){}
-}
 
+}
 
 const verticalWin = () => {
 if((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")
@@ -119,15 +126,15 @@ if((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")
 ){}
 }
 
-
-
 const checkForWin = () => {
   if(horizontalWin() || verticalWin() || diagonalWin()) {
-    window.alert(`Player ${currentMarker} won!`)
+     window.alert(`Player ${currentMarker} won!`)
   } else {
-    // changeMarker()
-    checkForWin()
-  }
+    changeMarker()
+   }
+  
 }
+
+
 
 
