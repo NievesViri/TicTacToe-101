@@ -59,10 +59,8 @@ const row = parseInt (id.charAt(0))
 const column = parseInt (id.charAt(2))
 board[row][column] = currentMarker
   checkForWin()                
-  
+  changeMarker()
 } 
-
-
 
 
 
@@ -94,8 +92,8 @@ const checkForWin = () => {
   if(horizontalWin() || verticalWin() || diagonalWin()) {
      window.alert(`Player ${currentMarker} won!`)
   } else {
-    changeMarker()
-    return false
+    // changeMarker()
+return false
    }
   
 }
