@@ -85,7 +85,13 @@ const squares = document.getElementsByTagName("td")
 document.getElementById(squares[i].id)
     // sets the innerHTML to null to replace the "X" or "O"
     squares[i].innerHTML = null
+    
   }  
+  board = [
+    ["","",""],
+    ["","",""],
+    ["","",""]
+    ]
 }
 
 const checkForWin = () => {
